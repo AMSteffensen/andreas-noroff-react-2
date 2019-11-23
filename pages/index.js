@@ -22,12 +22,22 @@ Index.propTypes = {
 };
 
 Index.getInitialProps = async function() {
-	const response = await axios.get(BASE_URL);
-	const data = response.data;
-	const results = data.results;
-	console.log(results);
+	// in case there is an error in the API call
+	// we'll send an empty array in as the prop
+	let characters = [];
 
+	try {
+		const response = await axios.get(BASE_URL);
+		const data = response.data;
+		// data.results is the array of characters
+		characters = data.results;
+		console.log(characters);
+	} catch (error) {
+		console.log(error);
+	}
+
+	// the object we return here will become the props in the page component
 	return {
-		characters: results
+		characters: characters
 	};
 };
