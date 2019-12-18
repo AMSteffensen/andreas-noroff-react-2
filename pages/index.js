@@ -8,7 +8,11 @@ import { BASE_URL } from "../constants/API";
 export default function Index(props) {
 	return (
 		<Layout>
+			<Head title="Noroff Next" />
 			<h1>Elephants</h1>
+			{props.elephants.map(elephants => {
+				return <div key={elephants.id}>{elephants.name}</div>;
+			})}
 		</Layout>
 	);
 }
