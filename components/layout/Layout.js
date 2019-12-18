@@ -20,7 +20,7 @@ export default function Layout(props) {
 			<Navbar bg="dark" variant="dark" expand="lg">
 				<Link href="/">
 					<a>
-						<Navbar.Brand>Rick and Morty</Navbar.Brand>
+						<Navbar.Brand>Elephants viewer</Navbar.Brand>
 					</a>
 				</Link>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
