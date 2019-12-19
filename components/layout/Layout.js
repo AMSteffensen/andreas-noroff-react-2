@@ -42,6 +42,11 @@ export default function Layout(props) {
 								<Nav.Link as="span">Form</Nav.Link>
 							</a>
 						</Link>
+						<Link href="/redux">
+							<a>
+								<Nav.Link as="span">Redux</Nav.Link>
+							</a>
+						</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
