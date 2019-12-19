@@ -5,6 +5,12 @@ import NextHead from "next/head";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import styled from "styled-components";
+
+// here we create a new custom styled component from react-bootstrap's Container
+const StyledContainer = styled(Container)`
+	margin-top: 30px;
+`;
 
 export default function Layout(props) {
 	return (
@@ -20,7 +26,7 @@ export default function Layout(props) {
 			<Navbar bg="dark" variant="dark" expand="lg">
 				<Link href="/">
 					<a>
-						<Navbar.Brand>Elephants viewer</Navbar.Brand>
+						<Navbar.Brand>Elephants</Navbar.Brand>
 					</a>
 				</Link>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -31,15 +37,10 @@ export default function Layout(props) {
 								<Nav.Link as="span">Home</Nav.Link>
 							</a>
 						</Link>
-						<Link href="/about">
-							<a>
-								<Nav.Link as="span">About</Nav.Link>
-							</a>
-						</Link>
 					</Nav>
 				</Navbar.Collapse>
 			</Navbar>
-			<Container>{props.children}</Container>
+			<StyledContainer>{props.children}</StyledContainer>
 		</>
 	);
 }

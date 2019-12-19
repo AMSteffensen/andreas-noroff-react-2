@@ -1,24 +1,24 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Layout from "../components/layout/Layout";
 import Head from "../components/head";
+import Layout from "../components/layout/Layout";
 import axios from "axios";
 import { BASE_URL } from "../constants/API";
+import Heading from "../components/layout/Heading";
+import ElephantList from "../components/characters/list/ElephantList";
 
 export default function Index(props) {
 	return (
 		<Layout>
-			<Head title="Noroff Next" />
-			<h1>Elephants</h1>
-			{props.elephants.map(elephants => {
-				return <div key={elephants.id}>{elephants.name}</div>;
-			})}
+			<Head title="Elephants" />
+			<Heading>Elephants</Heading>
+			<ElephantList elephants={props.elephants} />
 		</Layout>
 	);
 }
 
 Index.propTypes = {
-	elephants: PropTypes.arrayOf(PropTypes.object)
+	elephants: PropTypes.arrayOf(PropTypes.object).isRequired
 };
 
 Index.getInitialProps = async function() {
